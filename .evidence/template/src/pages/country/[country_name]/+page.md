@@ -1,3 +1,8 @@
+```sql countries
+SELECT DISTINCT country AS country_name
+FROM cvd.covid
+```
+
 #  Total Metrics for {params.country_name}
 
 ```sql country_summary
