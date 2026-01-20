@@ -1,0 +1,4 @@
+name: cvd
+type: duckdb
+options:
+  filename: db.db

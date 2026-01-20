@@ -87,14 +87,16 @@ select
       end
     )
     else 0
-  end as highlight_value
+  end as highlight_value,
+
+  '/country/' || country || '?metric=' || '${inputs.metric.value}' as link
 
 from cvd.covid
 where
   ('${inputs.year.value}' = '%' or year = cast('${inputs.year.value}' as int))
 group by country
 ```
-
+Select a country to see more detail
 
 <AreaMap
   data={map_data}
@@ -103,6 +105,7 @@ group by country
   geoId="name"
   value="highlight_value"
   title="COVID-19 Map"
+  link=link
   colorScheme={["#ffffff", "#1f77b4"]}
   borders={true}
   borderColor="#333333"
@@ -113,4 +116,3 @@ group by country
   ]}
   height=200
   />
-
