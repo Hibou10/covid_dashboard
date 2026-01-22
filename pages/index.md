@@ -96,7 +96,9 @@ where
   ('${inputs.year.value}' = '%' or year = cast('${inputs.year.value}' as int))
 group by country
 ```
-Select a country to see more detail
+Explore country-level COVID-19 trends through interactive visualizations.
+
+Zoom into the map and click on a country to access a detailed overview of its key metrics.
 
 <AreaMap
   data={map_data}
